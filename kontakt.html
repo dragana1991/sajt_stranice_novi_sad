@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="sr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Novi Sad – Kontakt</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-wrap">
+        <h1 class="logo">Novi Sad</h1>
+        <nav class="main-nav" aria-label="Glavna navigacija">
+          <button
+            class="nav-toggle"
+            aria-expanded="false"
+            aria-controls="navMenu"
+            aria-label="Otvori meni"
+          >
+            ☰
+          </button>
+          <ul id="navMenu" class="nav-menu">
+            <li><a href="index.html">Početna</a></li>
+            <li class="dropdown">
+              <a class="has-sub" href="istorija.html">Istorija</a>
+              <ul class="dropdown-menu">
+                <li><a href="istorija.html#stara">Stara istorija</a></li>
+                <li><a href="istorija.html#moderna">Moderni Novi Sad</a></li>
+              </ul>
+            </li>
+            <li><a href="lokacija.html">Lokacija</a></li>
+            <li><a class="active" href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container main-content">
+      <section>
+        <h2>Kontakt informacije</h2>
+        <p>
+          Ako imate pitanja o Novom Sadu ili želite više informacija, možete nas
+          kontaktirati putem podataka u tabeli ispod ili preko kontakt forme.
+        </p>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Institucija</th>
+              <th>Adresa</th>
+              <th>Telefon</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Turistička organizacija Novog Sada</td>
+              <td>Trg slobode 3</td>
+              <td>+381 21 123 456</td>
+              <td><a href="mailto:info@novisad.rs">info@novisad.rs</a></td>
+            </tr>
+            <tr>
+              <td>Gradska uprava</td>
+              <td>Bulevar cara Lazara 1</td>
+              <td>+381 21 654 321</td>
+              <td><a href="mailto:uprava@novisad.rs">uprava@novisad.rs</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Pošaljite poruku</h2>
+        <form action="#" method="post" class="form">
+          <label for="ime">Ime i prezime:</label>
+          <input
+            type="text"
+            id="ime"
+            name="ime"
+            required
+            placeholder="Vaše ime"
+          />
+
+          <label for="email">Email adresa:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="primer@mail.com"
+          />
+
+          <label for="poruka">Vaša poruka:</label>
+          <textarea
+            id="poruka"
+            name="poruka"
+            rows="5"
+            required
+            placeholder="Unesite svoju poruku..."
+          ></textarea>
+
+          <button type="submit" class="btn">Pošalji</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2025 Grad Novi Sad</p>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector(".nav-toggle");
+      const menu = document.querySelector("#navMenu");
+      toggle.addEventListener("click", () => {
+        const open = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!open));
+        menu.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>

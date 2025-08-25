@@ -1,31 +1,97 @@
 <!DOCTYPE html>
 <html lang="sr">
-<head>
-    <meta charset="UTF-8">
-    <title>Novi Sad - Dobrodošli</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Novi Sad</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Početna</a></li>
-                <li><a href="istorija.html">Istorija</a></li>
-                <li><a href="lokacija.html">Lokacija</a></li>
-            </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Novi Sad – Početna</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-wrap">
+        <h1 class="logo">Novi Sad</h1>
+
+        <nav class="main-nav" aria-label="Glavna navigacija">
+          <button
+            class="nav-toggle"
+            aria-expanded="false"
+            aria-controls="navMenu"
+            aria-label="Otvori meni"
+          >
+            ☰
+          </button>
+          <ul id="navMenu" class="nav-menu">
+            <li><a class="active" href="index.html">Početna</a></li>
+
+            <li class="dropdown">
+              <a href="istorija.html" class="has-sub">Istorija</a>
+              <ul class="dropdown-menu">
+                <li><a href="istorija.html#stara">Stara istorija</a></li>
+                <li><a href="istorija.html#moderna">Moderni Novi Sad</a></li>
+              </ul>
+            </li>
+
+            <li><a href="lokacija.html">Lokacija</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
         </nav>
+      </div>
     </header>
 
-    <main class="main-content">
-        <section>
-            <h2>Dobrodošli u Novi Sad</h2>
-            <img src="img/ns.jpg" alt="" class="float-left">
-           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi nulla, doloribus, alias voluptas aliquam fugiat nihil velit blanditiis accusantium dolore voluptatum unde nisi! Voluptates praesentium natus hic culpa delectus voluptate ducimus commodi quidem temporibus at. Ex debitis earum ab sit repudiandae dolore, eum similique at sunt, optio minus provident aliquam nostrum? Officia sit delectus praesentium incidunt sunt vitae quia facilis ab fugit. Delectus voluptates corporis, unde non omnis harum ipsam laborum repudiandae voluptatum, quaerat odit ea consectetur velit culpa illo neque nobis eum veniam mollitia maiores eveniet! Ut, sint? Cum, sequi voluptas omnis, fugit exercitationem totam nisi fugiat quod hic quas dolorem. Facere sed explicabo illum aspernatur quod esse consequatur error iure eveniet ex? Saepe sapiente laudantium sit recusandae delectus veritatis error omnis cumque velit aperiam ab repellendus, similique ea praesentium. Rem nisi vitae facilis quas accusamus. Vero modi ab iure, quam nostrum rem, ea corporis, dolorum eum unde ad quo. Minima similique maiores odio culpa enim quas. Nam odit suscipit ullam, cumque repellendus dignissimos, accusamus veritatis sunt a molestias repudiandae, fuga ratione aperiam ea facilis laboriosam dolores doloribus? Dolor rem perferendis illo hic qui beatae veritatis et iusto temporibus ipsum. Minus a rerum nihil, mollitia repudiandae perspiciatis et omnis.
+    <main class="container main-content">
+      <section class="hero">
+        <img src="img/novisad3.webp" alt="Panorama Novog Sada" />
+        <div class="hero-text">
+          <h2>Dobrodošli u Novi Sad</h2>
+          <p>
+            Novi Sad je grad kulture, festivala i mostova. Ušuškan između Dunava
+            i Fruške gore, nudi spoj istorijskog nasleđa i savremenog života.
+          </p>
+          <p>
+            Prošetajte Zmaj Jovinom, posetite Petrovaradinsku tvrđavu i otkrijte
+            zašto je
+            <em>EXIT</em> deo identiteta grada.
+          </p>
+          <a class="btn" href="istorija.html">Saznaj više</a>
+        </div>
+      </section>
+
+      <section class="features">
+        <article class="card">
+          <h3>Petrovaradinska tvrđava</h3>
+          <p>
+            Barokna tvrđava sa pogledom na grad i satom koji „žuri“ i „kasni“
+            namerno.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Dunavski park</h3>
+          <p>
+            Najlepši gradski park – oaza zelenila, labudova i lagane šetnje.
+          </p>
+        </article>
+        <article class="card">
+          <h3>EXIT Festival</h3>
+          <p>
+            Jedan od najvećih muzičkih festivala u Evropi, održava se svako
+            leto.
+          </p>
+        </article>
+      </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Grad Novi Sad</p>
+    <footer class="site-footer">
+      <p>&copy; 2025 Grad Novi Sad</p>
     </footer>
-</body>
+
+    <script>
+      const toggle = document.querySelector(".nav-toggle");
+      const menu = document.querySelector("#navMenu");
+      toggle.addEventListener("click", () => {
+        const open = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!open));
+        menu.classList.toggle("open");
+      });
+    </script>
+  </body>
 </html>
